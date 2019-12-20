@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import "./App.css";
 
+class Account extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <li key={this.key}>Hello, {this.props.name}</li>;
+  }
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -14,11 +23,11 @@ class App extends Component {
       .then(accounts => this.setState({ accounts }));
   }
   render() {
-    return (
-      <div className="App">
-        <h1>Hello, world!</h1>
-      </div>
-    );
+    const accounts = this.state.accounts.map((account, key) => (
+      <Account {...account} key={key}></Account>
+    ));
+
+    return <ul>{accounts}</ul>;
   }
 }
 export default App;
