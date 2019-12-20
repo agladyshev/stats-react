@@ -6,11 +6,27 @@ class Account extends Component {
     super(props);
   }
   render() {
-    return <li key={this.key}>Hello, {this.props.name}</li>;
+    const element = (
+      <li key={this.key} className="account">
+        <picture>
+          <img
+            className="account-picture"
+            src={this.props.youtube_thumbnail || this.props.twitter_pic}
+          ></img>
+        </picture>
+        <div className="account-main-stats">
+          <h2>{this.props.name}</h2>
+          <div>YouTube subscribers: {this.props.youtube_subscribers}</div>
+          <div>Twitter followers: {this.props.twitter_followers}</div>
+          <div>Telegram subscribers: {this.props.tg_channel_subscribers}</div>
+        </div>
+      </li>
+    );
+    return element;
   }
 }
 
-class App extends Component {
+class Accounts extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,7 +43,28 @@ class App extends Component {
       <Account {...account} key={key}></Account>
     ));
 
-    return <ul>{accounts}</ul>;
+    return (
+      <main>
+        <ul>{accounts}</ul>
+      </main>
+    );
+  }
+}
+
+class NavBar extends Component {
+  render() {
+    return <nav>zocial</nav>;
+  }
+}
+
+class App extends Component {
+  render() {
+    return (
+      <div className="app">
+        <NavBar></NavBar>
+        <Accounts></Accounts>
+      </div>
+    );
   }
 }
 export default App;

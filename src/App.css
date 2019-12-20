@@ -1,4 +1,61 @@
-.App {
-  margin: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: 2rem 1fr;
+  grid-template-areas:
+    "nav"
+    "main";
+}
+
+.app nav {
+  grid-area: nav;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app main {
+  grid-area: main;
+}
+
+.account {
+  display: flex;
+  justify-content: space-around;
+  max-width: 25rem;
+}
+
+.account picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
