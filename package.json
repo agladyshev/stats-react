@@ -5,30 +5,27 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "(webpack) & node index.mjs",
+    "start": "(webpack --config webpack.prod.js --mode production) & node index.mjs",
     "build": "webpack",
-    "dev": "(webpack --watch) & node index.mjs"
+    "dev": "(webpack --config webpack.dev.js --mode development  --watch) & node index.mjs"
   },
   "author": "Alexey Gladyshev",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
     "babel-loader": "^8.0.6",
-    "css-loader": "^3.4.0",
-    "react-hot-loader": "^4.12.18",
-    "style-loader": "^1.0.2",
-    "webpack": "^4.41.4",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.1"
-  },
-  "dependencies": {
     "cors": "^2.8.5",
+    "css-loader": "^3.4.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "style-loader": "^1.0.2",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10",
+    "webpack-merge": "^4.2.2"
   }
 }
