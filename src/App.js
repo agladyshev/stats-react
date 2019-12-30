@@ -9,6 +9,12 @@ class App extends Component {
       <div className="app">
         <NavBar></NavBar>
         <Accounts></Accounts>
+        <footer>
+          alexey gladyshev
+          <a href="github.com/agladyshev">
+            <img src="./icons/github.png"></img>
+          </a>
+        </footer>
       </div>
     );
   }

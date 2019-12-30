@@ -30,10 +30,11 @@ h2 {
 .app {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 2.5rem 1fr;
+  grid-template-rows: 2.5rem 1fr 2rem;
   grid-template-areas:
     "nav"
-    "main";
+    "main"
+    "footer";
 }
 
 .app nav {
@@ -193,4 +194,23 @@ h2 {
 .account ul details dl dd {
   font-size: 0.8rem;
   text-align: right;
+}
+
+footer {
+  font-size: 0.8rem;
+  padding: 0 0.5rem;
+  grid-area: footer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0px 1rem 0 rgba(0, 0, 0, 0.1), 0 0px 1rem 0 rgba(0, 0, 0, 0.05);
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+}
+
+footer a img {
+  height: 1.5rem;
 }
