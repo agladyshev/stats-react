@@ -30,7 +30,7 @@ h2 {
 .app {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 2.5rem 1fr 2rem;
+  grid-template-rows: auto 1fr 2rem;
   grid-template-areas:
     "nav"
     "main"
@@ -39,29 +39,73 @@ h2 {
 
 .app nav {
   grid-area: nav;
-  /* background-color: #333; */
+}
+
+.app nav header {
+  box-shadow: 0 0px 1rem 0 rgba(0, 0, 0, 0.1), 0 0px 1rem 0 rgba(0, 0, 0, 0.05);
   background-color: yellow;
-  /* color: #fff; */
+  height: 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* font-size: 1.2rem; */
-  /* margin: 0.25rem 0; */
-  /* border-bottom: 2px solid black; */
-  /* height: 0.9rem; */
-  box-shadow: 0 0px 1rem 0 rgba(0, 0, 0, 0.1), 0 0px 1rem 0 rgba(0, 0, 0, 0.05);
 }
 
-.app nav h1 {
+.app nav header h1 {
   margin: 0;
+  letter-spacing: 0.1rem;
   line-height: 2rem;
   font-weight: 400;
   padding: 0 0.5rem;
 }
 
-.app nav img {
+.app nav header button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: inherit;
+}
+
+.app nav header button img {
   height: 1.5rem;
   padding: 0 0.5rem;
+}
+
+.app nav form {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.app nav form strong {
+  align-self: center;
+  background-color: yellow;
+  font-size: 0.8rem;
+  letter-spacing: 0.05rem;
+  margin: 0.5rem;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1), 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+}
+
+.app nav form label {
+  text-transform: lowercase;
+  letter-spacing: 0.05rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.app nav form label input {
+  margin: 0 0.5rem;
+}
+.app nav form input[type="submit"] {
+  background-color: yellow;
+  width: auto;
+  line-height: 0.9rem;
+  letter-spacing: 0.1rem;
+  margin: 0.5rem;
 }
 
 .app main {
@@ -111,6 +155,7 @@ h2 {
 
 .account header h2 {
   text-align: right;
+  letter-spacing: 0.05rem;
   flex-basis: 100%;
   font-weight: 400;
 }
@@ -136,6 +181,8 @@ h2 {
 
 .account article p {
   margin: 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
 }
 .account ul.account-stats {
   grid-area: stats;
@@ -158,9 +205,9 @@ h2 {
   display: none;
 }
 
-.account ul details summary h6 {
-  /* padding: 0 0.5rem; */
-  margin: 0;
+.account ul details summary {
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
 }
 
 .account ul details summary img {
@@ -173,6 +220,7 @@ h2 {
   font-size: 0.7rem;
   font-weight: 600;
   margin: 0;
+  letter-spacing: 0.1rem;
 }
 .account ul details dl {
   display: flex;
@@ -204,6 +252,7 @@ h2 {
 footer {
   font-size: 0.8rem;
   padding: 0 0.5rem;
+  letter-spacing: 0.1rem;
   grid-area: footer;
   display: flex;
   justify-content: space-between;
