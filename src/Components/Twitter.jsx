@@ -9,7 +9,7 @@ export default class Twitter extends Component {
       <details>
         <summary>
           <img src="./icons/twitter_flat.png"></img>
-          <h6>Twitter</h6>
+          Twitter
         </summary>
         {/* <p>Overall</p> */}
         <dl>

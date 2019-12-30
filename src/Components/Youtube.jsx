@@ -23,7 +23,7 @@ export default class Youtube extends Component {
       <details>
         <summary>
           <img src="./icons/youtube_flat.png"></img>
-          <h6>YouTube</h6>
+          YouTube
         </summary>
         {/* <p>Overall</p> */}
         <dl>

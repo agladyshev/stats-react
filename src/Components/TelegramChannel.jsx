@@ -9,7 +9,7 @@ export default class TelegramChannel extends Component {
       <details>
         <summary>
           <img src="./icons/telegram_flat.png"></img>
-          <h6>Telegram channel</h6>
+          Telegram channel
         </summary>
         <p>
           According to <a href="https://tgstat.com/">tgstat.com</a>

@@ -151,6 +151,11 @@ h2 {
 .account ul details summary {
   display: flex;
   align-items: center;
+  list-style: none;
+}
+
+.account ul details summary::-webkit-details-marker {
+  display: none;
 }
 
 .account ul details summary h6 {
