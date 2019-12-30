@@ -23,8 +23,7 @@ export default class TelegramChannel extends Component {
             <dt>Subscribers</dt> <dd>{this.props.tg_channel_subscribers}</dd>
           </div>
           <div>
-            <dt>Posts per day</dt>{" "}
-            <dd>{this.props.tg_channel_posts_per_day}</dd>
+            <dt>Posts / day</dt> <dd>{this.props.tg_channel_posts_per_day}</dd>
           </div>
           <div>
             <dt>Post reach</dt>

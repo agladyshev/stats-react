@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Youtube extends Component {
+export default class Youtube extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -57,5 +57,3 @@ class Youtube extends Component {
     );
   }
 }
-
-export default Youtube;

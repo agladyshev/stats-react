@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Youtube from "./Youtube.jsx";
 import TelegramChannel from "./TelegramChannel.jsx";
+import Twitter from "./Twitter.jsx";
 
 export default class Account extends Component {
   constructor(props) {
@@ -11,6 +12,9 @@ export default class Account extends Component {
       ),
       tgChannel: Object.fromEntries(
         Object.entries(props).filter(([key]) => key.includes("tg_channel"))
+      ),
+      twitter: Object.fromEntries(
+        Object.entries(props).filter(([key]) => key.includes("twitter"))
       )
       // links: {
       // youtube_url: new URL(youtube_name, "https://www.youtube.com/user/")
@@ -76,6 +80,9 @@ export default class Account extends Component {
           {/* <div>Telegram subscribers: {this.props.tg_channel_subscribers}</div> */}
         </article>
         <ul className="account-stats">
+          {this.props.twitter_status == "OK" ? (
+            <Twitter {...this.state.twitter} />
+          ) : null}
           {this.props.youtube_status == "OK" ? (
             <Youtube {...this.state.youtube} />
           ) : null}
