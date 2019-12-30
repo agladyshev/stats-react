@@ -29,6 +29,7 @@ h2 {
 
 .app {
   display: grid;
+  grid-template-columns: auto;
   grid-template-rows: 2rem 1fr;
   grid-template-areas:
     "nav"
@@ -37,8 +38,9 @@ h2 {
 
 .app nav {
   grid-area: nav;
-  background-color: #333;
-  color: #fff;
+  /* background-color: #333; */
+  background-color: yellow;
+  /* color: #fff; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,14 +50,94 @@ h2 {
   grid-area: main;
 }
 
-.account {
+.app main ul {
   display: flex;
-  justify-content: space-around;
-  max-width: 25rem;
+  flex-wrap: wrap;
+  /* margin: 0 0.5rem; */
+}
+
+.account {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "pic desc"
+    "stats stats";
+
+  border: none;
+  padding: 0.5rem 1rem;
+  /* margin: 0.25rem; */
+  /* background-color: #888; */
+  /* color: white; */
+  /* background-color: ivory; */
+  font-size: 1rem;
 }
 
 .account picture {
+  grid-area: pic;
   display: flex;
   align-items: center;
-  justify-content: center;
+
+  /* justify-content: center; */
+}
+
+.account picture img {
+  /* border: 1px dotted black; */
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1), 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+}
+
+.account article {
+  grid-area: desc;
+}
+.account ul {
+  grid-area: stats;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1), 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+}
+.account ul details {
+  flex-basis: 100%;
+  /* background-color: #aaa; */
+  color: black;
+}
+.account ul details summary {
+  display: flex;
+  align-items: center;
+}
+
+.account ul details summary h6 {
+  /* padding: 0 0.5rem; */
+  margin: 0;
+}
+
+.account ul details summary img {
+  padding: 0 0.5rem;
+  height: 2rem;
+}
+
+.account ul details p {
+  padding: 0 0.25rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 0;
+}
+.account ul details dl {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.account ul details dl div {
+  background-color: yellow;
+  padding: 0.1rem 0.5rem;
+  margin: 0.25rem 0.5rem;
+  border-radius: 2px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1), 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+  letter-spacing: 0.05rem;
+}
+.account ul details dl dt {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.account ul details dl dd {
+  font-size: 0.8rem;
 }
