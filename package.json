@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "=13.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "(webpack --config webpack.prod.js --mode production) & node index.mjs",
-    "build": "webpack",
+    "build": "webpack --config webpack.prod.js --mode production",
     "dev": "(webpack --config webpack.dev.js --mode development  --watch) & node index.mjs"
   },
   "author": "Alexey Gladyshev",
