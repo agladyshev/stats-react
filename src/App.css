@@ -130,13 +130,14 @@ h2 {
 }
 .account ul.account-stats {
   grid-area: stats;
-  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1), 0 2px 5px 0 rgba(0, 0, 0, 0.05);
   display: flex;
 }
 .account ul details {
   flex-basis: 100%;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1), 0 2px 5px 0 rgba(0, 0, 0, 0.05);
   /* background-color: #aaa; */
   color: black;
+  margin-bottom: 0.25rem;
 }
 .account ul details summary {
   display: flex;
@@ -178,4 +179,5 @@ h2 {
 }
 .account ul details dl dd {
   font-size: 0.8rem;
+  text-align: right;
 }
