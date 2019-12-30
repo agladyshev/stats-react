@@ -20,8 +20,16 @@ const getAccounts = function(req, res, next) {
     .catch(error => console.log(error));
 };
 
+const addAccount = function(req, res, next) {
+  next();
+};
+
 app.get("/getAccounts", getAccounts, function(req, res, next) {
   res.send(res.accounts);
+});
+
+app.post("/add", addAccount, function(req, res) {
+  res.json();
 });
 
 app.listen(port, () => console.log(`Listening`));

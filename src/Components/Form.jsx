@@ -7,7 +7,8 @@ export default class Form extends Component {
       name: "",
       telegramChannel: "",
       twitterName: "",
-      youtubeName: ""
+      youtubeName: "",
+      errorMessage: ""
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,7 +31,26 @@ export default class Form extends Component {
       this.state.twitterName ||
       this.state.youtubeName
     ) {
-      console.log("success");
+      this.setState({
+        errorMessage: ""
+      });
+      fetch("/add", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...Object.fromEntries(
+            Object.entries(this.state).filter(([key, value]) => value)
+          )
+        })
+      }).then(res => {
+        if (res.status == 200) {
+          this.props.toggleForm();
+        } else {
+          this.setState({
+            errorMessage: res.statusText
+          });
+        }
+      });
     } else {
       this.setState({
         errorMessage: "at least one social account is required"
@@ -48,6 +68,7 @@ export default class Form extends Component {
             size="8"
             name="name"
             type="text"
+            value={this.state.name}
             onChange={this.handleInputChange}
           />
         </label>
@@ -57,6 +78,7 @@ export default class Form extends Component {
             size="8"
             name="telegramChannel"
             type="text"
+            value={this.state.telegramChannel}
             onChange={this.handleInputChange}
           />
         </label>
@@ -66,6 +88,7 @@ export default class Form extends Component {
             size="8"
             name="twitterName"
             type="text"
+            value={this.state.twitterName}
             onChange={this.handleInputChange}
           />
         </label>
@@ -75,6 +98,7 @@ export default class Form extends Component {
             size="8"
             name="youtubeName"
             type="text"
+            value={this.state.youtubeName}
             onChange={this.handleInputChange}
           />
         </label>

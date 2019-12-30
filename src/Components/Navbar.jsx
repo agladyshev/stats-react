@@ -8,8 +8,8 @@ export default class NavBar extends Component {
     this.toggleForm = this.toggleForm.bind(this);
   }
 
-  toggleForm(e) {
-    e.preventDefault();
+  toggleForm() {
+    // e.preventDefault();
     this.setState(state => ({
       isToggleOn: !state.isToggleOn
     }));
@@ -23,7 +23,7 @@ export default class NavBar extends Component {
             <img src="./icons/add-user.png"></img>
           </button>
         </header>
-        {this.state.isToggleOn && <Form></Form>}
+        {this.state.isToggleOn && <Form toggleForm={this.toggleForm}></Form>}
       </nav>
     );
   }
